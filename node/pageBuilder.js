@@ -13,6 +13,28 @@ var fs = require('fs');
 var path = require('path');
 var htmlTemplatize = require('./Templateizer/htmlTemplatize');
 
+//Add function for title
+htmlTemplatize.registerCommand('title', (context) => {
+
+  const titleFileName = path.basename(context.partialPath, '.html');
+
+  const title = titleFileName.replace(/([a-z])([A-Z])/g, '$1 $2');
+
+  return title;
+
+});
+
+htmlTemplatize.registerCommand('abstract', (context) => {
+
+  //Get the containing folder
+  const abstractFolder = path.dirname(context.partialPath);
+  const abstractPath = abstractFolder + "/abstract.txt";
+
+  //Return the file contents
+  return fs.readFileSync(abstractPath, {encoding: 'UTF-8'});
+
+});
+
 fs.mkdirParentSync = function(dirPath, mode)
 {
   //Try to find parent dir
@@ -65,7 +87,11 @@ while(stack.length > 0)
 
   if(info.isFile())
   {
-    partialList.push(value);
+    //Check for html extension
+    if(path.extname(value) === '.html')
+    {
+      partialList.push(value);
+    }
   }
   else
   {
@@ -86,7 +112,11 @@ for(let index = 0; index < partialList.length; ++index)
 {
   let outputValue = path.normalize(partialList[index].replace(partialPath, outputDirArg));
 
-  outList[index] = outputValue;
+  //The blog needs to have all the entries renamed to 'index.html'
+  let dirName = path.dirname(outputValue);
+  let correctedOutputValue = dirName + "/index.html";
+
+  outList[index] = correctedOutputValue;
   try
   {
     fs.mkdirParentSync(path.dirname(outputValue));
