@@ -3,6 +3,11 @@
   * Licensed under the Apache License, Version 2.0 (the "License");
   * you may not use this file except in compliance with the License. 
   */
+
+/**
+ * Modified version of pageBuilder from templatizer, used primaraly to generate
+ * blog content, should always be run in root
+ */
 "use strict";
 var fs = require('fs');
 var path = require('path');
@@ -39,16 +44,13 @@ var partialList = [];
 var outList = [];
 
 //Start by getting the template
-if(process.argv.length > 2)
-  var templateArg = process.argv[2];
+var templateArg = "template.html";
 
 //Then the partial dir
-if(process.argv.length > 3)
-  var partialPath = process.argv[3];
+var partialPath = "partials/"
 
 //Finally get the output dir
-if(process.argv.length > 4)
-  var outputDirArg = process.argv[4];
+var outputDirArg = ".";
 
 //Handle this as a stack
 let stack = [partialPath];
