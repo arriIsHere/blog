@@ -1,4 +1,9 @@
-<div class="articlePreview">
-  <a href="{{var(outputPath)}}">{{var(title)}}</a>
-  <img src="{{var(outputImage)}}">
-</div>
+<a class="articlePreview" href="{{var(outputPath)}}">
+  <div class="imageCrop">
+    <img class="previewImage" src="{{var(outputImage)}}">
+  </div>
+  <span class="previewTitle">
+    <span>{{var(title)}}</span>
+    <span class="date">A few days ago</span>
+  </span>
+</a>
