@@ -46,7 +46,7 @@ header img.backdrop
 {
   z-index: -1;
   position: absolute;
-  top: -150%;
+  top: 0;
   left: 0;
   height: 120%;
   min-width: 100%;
@@ -253,6 +253,10 @@ article h1
 /*Stuff for desktop only*/
 @media screen and (min-device-width: 900px)
 {
+  header img.backdrop
+  {
+    top: -150%;
+  }
   .articlePreview
   {
     display: inline-block;
