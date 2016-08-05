@@ -27,6 +27,38 @@ const titleGenerator = (context) => {
 
 };
 
+const dateGenerator = (context) => {
+  const outputPath = context.outputPath;
+
+  const fileRemoved = path.dirname(outputPath);
+
+  const isoDate = fileRemoved.replace('articles/' , '');
+
+  return isoDate;
+}
+
+const humanReadableDate = (context) => {
+
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 
+                  'July', 'August', 'September', 'October', 'November',
+                  'December'];
+  const isoDate = dateGenerator(context);
+  const date = isoDate.split('/');
+
+  if(date.length < 3)
+  {
+    return isoDate;
+  }
+
+  const year = date[0];
+  const monthNumber = Number(date[1]);
+  const dayOfMonth = date[2];
+
+  const month = months[monthNumber - 1];
+
+  return `${month} ${dayOfMonth}, ${year}`;
+}
+
 //Add function for title
 htmlTemplatize.registerCommand('title', titleGenerator);
 
@@ -81,10 +113,14 @@ htmlTemplatize.registerCommand('postList', (context, args) => {
 
     let outputTitle = titleGenerator({partialPath : item});
 
+    //Generate the date
+    let outputDate = humanReadableDate({outputPath: outputPath});
+
     //Set the values for the context
     itemContext.outputPath = outputPath;
     itemContext.outputImage = outputImage;
     itemContext.title = outputTitle;
+    itemContext.date = outputDate;
 
     let itemResult = htmlTemplatize.templatizeString(postListItemTemplate, itemContext);
 
@@ -193,7 +229,9 @@ for(let index = 0; index < partialList.length; ++index)
   let imageFromPath = path.dirname(partialList[index]) + "/" + headerImageName;
   let imageToPath = dirName + "/" + headerImageName;
 
-  if(fs.statSync(imageToPath).isFile() && fs.statSync(imageToPath).isFile())
+
+
+  if(fs.statSync(imageFromPath).isFile())
   {
     //Copy header.jpg to the destination directory
     fs.createReadStream(imageFromPath).on('error', _ => null).pipe(fs.createWriteStream(imageToPath).on('error', _ => null));
