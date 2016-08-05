@@ -202,53 +202,6 @@ article h1
   margin-bottom: -15vw;
 }
 
-@media screen and (min-width: 1024px)
-{
-  header img.backdrop
-  {
-    top: 0;
-  }
-  .floatBoxContainer
-  {
-    padding-left: 2em;
-  }
-  header
-  {
-    height: 90vh;
-  }
-  header h1
-  {
-    font-size: 5em;
-  }
-
-  .abstract
-  {
-    clear: both;
-    display: block;
-    padding-top: 0;
-    padding-left: 0;
-    text-align: right;
-    position: absolute;
-    text-shadow: 1px 1px 5px #000;
-    color: #FFF;
-    top: 0;
-    right: 0;
-  }
-
-  .profile
-  {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding-left: 1em;
-  }
-
-  .profile div.inlineBox
-  {
-    display: block;
-  }
-}
-
 /*Stuff for desktop only*/
 @media screen and (min-device-width: 900px)
 {
@@ -332,5 +285,52 @@ article h1
     {
       transform: translateZ(-2px) scale(3);
     }
+  }
+}
+
+@media screen and (min-width: 1024px)
+{
+  header img.backdrop
+  {
+    top: 0;
+  }
+  .floatBoxContainer
+  {
+    padding-left: 2em;
+  }
+  header
+  {
+    height: 90vh;
+  }
+  header h1
+  {
+    font-size: 5em;
+  }
+
+  .abstract
+  {
+    clear: both;
+    display: block;
+    padding-top: 0;
+    padding-left: 0;
+    text-align: right;
+    position: absolute;
+    text-shadow: 1px 1px 5px #000;
+    color: #FFF;
+    top: 0;
+    right: 0;
+  }
+
+  .profile
+  {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-left: 1em;
+  }
+
+  .profile div.inlineBox
+  {
+    display: block;
   }
 }
