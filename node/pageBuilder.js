@@ -109,7 +109,7 @@ htmlTemplatize.registerCommand('postList', (context, args) => {
     outputPath = outputPath.replace(/\\/g, "/");
 
     //Get the output image path
-    let outputImage = path.dirname(outputPath) + "/header.jpg";
+    let outputImage = path.dirname(outputPath) + "/" + headerImageName;
 
     let outputTitle = titleGenerator({partialPath : item});
 
