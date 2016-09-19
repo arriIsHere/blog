@@ -285,8 +285,23 @@ article h1
       height: 100vh;
       scroll-behavior: smooth;
     }
+    
+    header .profile
+    {
+      transform: translateZ(0);
+    }
+
+    header .widthFix
+    {
+      transform: translateZ(0);
+    }
 
     header div.floatBox
+    {
+      transform: translateZ(0);
+    }
+    
+    .floatBoxContainer
     {
       transform: translateZ(0);
     }
