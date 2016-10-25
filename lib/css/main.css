@@ -223,7 +223,7 @@ article h1
   header img.backdrop
   {
     top: -150%;
-    height: 100%;
+    min-height: 100%;
     min-width: 120%;
   }
   .articlePreview
