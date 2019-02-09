@@ -3,8 +3,8 @@
   "version": "2.0.0",
   "description": "Personal blog for random articles",
   "scripts": {
-    "build": "eleventy --input=src --output=dist --passthroughall",
-    "serve": "eleventy --input=src --output=dist --passthroughall --serve --port=3000"
+    "build": "eleventy",
+    "serve": "eleventy --serve --port=3000"
   },
   "repository": {
     "type": "git",
