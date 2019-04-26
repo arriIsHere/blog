@@ -28,4 +28,6 @@ Early on this wasn't something you needed to think about but now it requires a c
 
 ## Cherish Your Chosen
 
-The decision has been made, you have turned down some projects, and said yes to others. One of the reasons why the how-much-do-you-want-to-do-this question is important is you need to want to finish these projects, you need to have a pride in each of these and polish and finish them. But as always be balanced, don't let one project ruin the others you agreed to.
+The decision has been made, you have turned down some projects, and said yes to others. One of the reasons why the how-much-do-you-want-to-do-this question is important is you need to want to finish these projects, you need to have pride in each of these and polish and finish them. But as always be balanced, don't let one project ruin the others you agreed to.
+
+Sometimes choices can be intimidating, but getting more choices is a sign of progress. Learn to prioritize and you will find that you are much more relaxed in your work.
