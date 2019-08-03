@@ -133,6 +133,11 @@ article h1
   font-size: 5em;
 }
 
+article img
+{
+  max-width: 100%;
+}
+
 .floatBox
 {
   width: 100%;
