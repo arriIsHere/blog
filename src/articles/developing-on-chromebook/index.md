@@ -48,5 +48,13 @@ Now we are ready to move on to the next part: installing and editor.
 
 VSCode is the text editor of choice for myself and many other developers lets install that next.
 
-We begin by downloading the .deb version of VSCode from [https://code.visualstudio.com/](https://code.visualstudio.com/).
+We begin by downloading the .deb version of VSCode from [https://code.visualstudio.com/](https://code.visualstudio.com/). You will want to download the '.deb' option.
 ![Image of the VSCode download page, there are two green buttons, top one says .deb bottom one says .rpm'](VSCodeDownloadPage.png)
+
+When prompted for where to save, make sure to select the "Linux Files" section in the explorer.
+
+![image of the chrome file explorer, contains the section "Linux files" which is prefixed by a penguin icon.](LinuxFiles.png)
+
+Once the file is downloaded, go to its location in the file explorer. Once there you can alt-click it and and select the "Install with Linux (Beta)" Option, this will install VSCode as a Linux app.
+
+![image of Chrome file explorer, contains context menu for VSCode debian file, the first item is "Install with Linux (Beta)"](InstallVSCodeWithLinux.png)
