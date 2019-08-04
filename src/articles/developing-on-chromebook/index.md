@@ -8,7 +8,7 @@ image: chromebook.jpg
 
 I was browsing around for some computer components when I came across a chromebook that was marked down. The stats were quite good and it seems like (in general) a fairly sturdy piece of hardware. "Shame it's not a real laptop." I thought to myself, then it occurred to me that this *was* an actual laptop it was simply a mater of operating system. Not only that but it was technically a unix based operating system.
 
-What follows is a step-by-step guide for how to turn a seemingly simple "internet machine" into a full fledged development environment. For brevity, I have included simple instructions. If you want a more raw, verbose account of what I went through can find the live play-by-play [on twitter](https://twitter.com/benblais/status/1157282631047737347).
+What follows is a step-by-step guide for how to turn a seemingly simple "internet machine" into a full fledged development environment. For brevity, I have included simple instructions. If you want a more raw, verbose account of what I went through checkout the play-by-play [on twitter](https://twitter.com/benblais/status/1157282631047737347).
 
 ## The Chromebook
 
@@ -31,7 +31,7 @@ For this guide, I'm going to gloss over setting up ChromeOS itself and will focu
 
 I would spend a little bit of time getting familiar with ChromeOS but feel free to jump into the rest of the guide head-first if it suites you.
 
-## 1. Turn ChromeOS linux feature
+## 1. Turn on ChromeOS linux feature
 
 If you poked around the Play store, you probably took note of the fact that there are a lot of apps, unfortunately we will need some specialized tools that cannot be found there to do our development work. The good news though is, installing these tools is fairly easy and requires only one trip to the settings page.
 
@@ -52,9 +52,13 @@ We begin by downloading the .deb version of VSCode from [https://code.visualstud
 ![Image of the VSCode download page, there are two green buttons, top one says .deb bottom one says .rpm'](VSCodeDownloadPage.png)
 
 When prompted for where to save, make sure to select the "Linux Files" section in the explorer.
-
 ![image of the chrome file explorer, contains the section "Linux files" which is prefixed by a penguin icon.](LinuxFiles.png)
 
-Once the file is downloaded, go to its location in the file explorer. Once there you can alt-click it and and select the "Install with Linux (Beta)" Option, this will install VSCode as a Linux app.
-
+Once the file is downloaded, go to its location in the file explorer. Once there you can alt-click it and and select the "Install with Linux (Beta)" option, this will install VSCode as a Linux app.
 ![image of Chrome file explorer, contains context menu for VSCode debian file, the first item is "Install with Linux (Beta)"](InstallVSCodeWithLinux.png)
+
+Once the install is complete, you can launch this just like a CromeOS app.
+![image of ChromeOS app search, One of the apps is the Visual Studio Code.](VSCodeLaunch.png)
+![image of Visual studio code editor](VSCodeWindow.png)
+
+Next, lets get Node and NPM installed so we can write some JavaScript.
