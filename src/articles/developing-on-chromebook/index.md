@@ -88,4 +88,9 @@ More text will be displayed. next make sure node is installed by running it with
 ~$ node -v
 v12.7.0
 ```
+The same will work with npm
+```bash
+~$ npm -v
+6.10.0
+```
 You should get something like the above text printed out. 
