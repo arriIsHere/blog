@@ -27,9 +27,9 @@ Normally this model goes for ~$600, mine was one sale for $300. You can probably
 
 ## 0. Setting Up The ChromeBook
 
-For this guide, I'm going to gloss over setting up ChromeOS itself and will focus exclusively on what is required for setting up a development environment. If you need help with this Google has a [simple guide](https://support.google.com/chromebook/answer/1047362?hl=en) on how to setup a new chromebook.
+For this guide, I'm going to gloss over setting up ChromeOS itself and will focus exclusively on what is required for setting up a development environment. If you need help with this Google has a [simple guide](https://support.google.com/chromebook/answer/1047362?hl=en) on how to setup a new Chromebook. 
 
-I would spend a little bit of time getting familiar with ChromeOS but feel free to jump into the rest of the guide head-first if it suites you.
+I would spend a little bit of time getting familiar with ChromeOS but feel free to jump into the rest of the guide head-first if you happen to be feeling adventurous.
 
 ## 1. Turn on ChromeOS linux feature
 
@@ -84,13 +84,14 @@ This command will output lots of text. Next install nodejs
 ```
 
 More text will be displayed. next make sure node is installed by running it with the version flag.
-```bash
+```bash/1
 ~$ node -v
 v12.7.0
 ```
-The same will work with npm
-```bash
+The same will work with npm:
+```bash/1
 ~$ npm -v
 6.10.0
 ```
-You should get something like the above text printed out. 
+
+If you saw a version displayed after running either of those commands, congrats! You have installed node on your chromebook.
