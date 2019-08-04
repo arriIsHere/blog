@@ -62,3 +62,30 @@ Once the install is complete, you can launch this just like a CromeOS app.
 ![image of Visual studio code editor](VSCodeWindow.png)
 
 Next, lets get Node and NPM installed so we can write some JavaScript.
+
+## 3. Installing Node and NPM
+
+Remember how I said we would be using the terminal later in this guide? Go ahead and open the terminal now.
+
+If this is your first time using the command line, don't worry, most of this is copy/paste
+
+Note: the default terminal on ChromeOS has paste bound to the CTRL+SHIFT+v
+
+first we need to be able to resolve the nodejs package. Enter the following command into your terminal
+```bash
+~$ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+```
+
+You can replace '12' with whatever is the latest version of node. (check at [https://nodejs.org](https://nodejs.org)).
+
+This command will output lots of text. Next install nodejs
+```bash
+~$ sudo apt-get install -y nodejs
+```
+
+More text will be displayed. next make sure node is installed by running it with the version flag.
+```bash
+~$ node -v
+v12.7.0
+```
+You should get something like the above text printed out. 
