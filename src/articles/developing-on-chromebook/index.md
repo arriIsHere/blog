@@ -95,3 +95,21 @@ The same will work with npm:
 ```
 
 If you saw a version displayed after running either of those commands, congrats! You have installed node on your chromebook.
+
+## 5. Setting up Git
+
+Fortunately, linux on your chromebook has git installed already. 
+```bash/1
+~$ git --version
+git version 2.11.0
+```
+
+If for some reason it's not there, or you uninstalled it by accident while exploring, no sweat, you can just reinstall it again.
+
+```bash
+~$ sudo apt-get install git
+```
+
+## That's it
+
+Congratulations, you have now set up your development environment on a chromebook. That's it for this guide, if you need help finding a project to get started on I recommend checking out [create-react-app getting started](https://facebook.github.io/create-react-app/docs/getting-started), [Vuejs's getting started guid](https://vuejs.org/v2/guide/), or many of the other tutorials out there.
