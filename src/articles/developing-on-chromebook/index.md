@@ -5,9 +5,9 @@ abstract:
 abstractAuthor: 
 image: chromebook.jpg
 ---
-I was browsing around for some computer components when I came across a Chromebook that was marked down. The stats were quite good, and it seems like (in general) a reasonably sturdy piece of hardware. "Shame it's not a real laptop." I thought to myself. Then I began to consider that more why wasn't a Chromebook a *real* laptop? It seems the only answer was the operating system, and that is something that can be changed.
+I was browsing around for some computer components when I came across a Chromebook that was marked down. The stats were quite good, and it seemed like (in general) a reasonably sturdy piece of hardware. "Shame it's not a real laptop." I thought to myself. Then I thought more why wasn't a Chromebook a *real* laptop? It seems the only answer was the operating system. Due to some [changes](https://support.google.com/chromebook/answer/9145439?hl=en) to ChromeOS, this is no longer the case.
 
-What follows is a step-by-step guide for how to turn a seemingly simple "internet machine" (Chromebook) into a full-fledged development environment. For brevity, I have included simple instructions if you want a more raw, verbose account of what I went through check out the play-by-play [on twitter](https://twitter.com/benblais/status/1157282631047737347).
+What follows is a step-by-step guide for how to turn a seemingly simple "internet machine" (Chromebook) into a full-fledged development environment. For brevity, I have included simple instructions on this blog. If you want a more raw, verbose account of what I went through check out the play-by-play [on twitter](https://twitter.com/benblais/status/1157282631047737347).
 
 ## The Chromebook
 
