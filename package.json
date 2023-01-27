@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/bblais23/blog#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy": "^1.0.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.6",
     "moment": "^2.29.4"
   }
