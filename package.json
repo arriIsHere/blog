@@ -2,7 +2,9 @@
   "name": "blog",
   "version": "2.0.0",
   "description": "Personal blog for random articles",
-  "scripts": {},
+  "scripts": {
+    "build": "eleventy --input=src --output=dist --passthroughall"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bblais23/blog.git"
