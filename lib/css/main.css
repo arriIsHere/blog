@@ -17,7 +17,8 @@ header
   overflow: hidden;
 }
 
-.widthFix
+.widthFix,
+article
 {
   max-width: 1024px;
   margin-left: auto;
@@ -34,9 +35,9 @@ header h1
   padding-top: 0.25em;
   font-size: 5em;
   color: #FFF;
+  margin-bottom: 0;
   text-shadow: 1px 1px 10px #000;
   font-weight: lighter;
-
 
   font-family: 'Cormorant Garamond', serif;
 }
@@ -51,6 +52,20 @@ header img.backdrop
   height: auto;
   min-width: 100%;
   min-height: 100%;
+}
+
+.abstract
+{
+  display: block;
+  max-width: 20em;
+  padding-right: 2em;
+  padding-left: 2em;
+  color: #000;
+  text-align: left;
+  font-size: 1.5em;
+  font-style: italic;
+  font-weight: lighter;
+  font-family: 'Cormorant Infant', serif;
 }
 
 article
@@ -77,12 +92,12 @@ article h1
 
 .profile
 {
-  width: auto;
-  float: left;
+  display: inline-block;
   padding-left: 2em;
   padding-top: 1em;
   padding-right: 4em;
   padding-bottom: 1em;
+  width: auto;
   color: #FFF;
   font-family: 'Cormorant Garamond', serif;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
@@ -91,7 +106,7 @@ article h1
 .profile img
 {
   display: inline-block;
-  width: 60pt;
+  width: 5em;
   vertical-align: middle;
 }
 
@@ -116,42 +131,50 @@ article h1
   display: inline-block;
 }
 
-.abstract
+@media screen and (min-width: 1024px)
 {
-  padding-top: 0;
-  text-align: right;
-  max-width: 20em;
-  padding-right: 2em;
-  color: #FFF;
-  font-size: 1.5em;
-  font-style: italic;
-  font-weight: lighter;
-  text-shadow: 1px 1px 5px #000;
-  font-family: 'Cormorant Infant', serif;
+  header
+  {
+    height: 90vh;
+  }
+  .abstract
+  {
+    clear: both;
+    display: block;
+    padding-top: 0;
+    padding-left: 0;
+    text-align: right;
+    position: absolute;
+    text-shadow: 1px 1px 5px #000;
+    color: #FFF;
+    top: 0;
+    right: 0;
+  }
+
+  .profile
+  {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: none;
+  }
+
+  .profile div.inlineBox
+  {
+    display: block;
+  }
 }
 
-.floatLeft
-{
-  float: left;
-  display: inline-block;
-}
-
-.floatRight
-{
-  float: right;
-  display: inline-block;
-}
-
-
+/*Mobile only not really small screens*/
 @media screen and (min-device-width: 900px)
 {
-
   @supports( (perspective: 1px) and (not (-webkit-overflow-scrolling: touch)))
   {
     body
     {
       perspective: 1px;
       height: 100vh;
+      scroll-behavior: smooth;
     }
 
     header div.floatBox
