@@ -30,6 +30,15 @@ article
   padding-right: 2em;
 }
 
+/*Animate the header background*/
+@keyframes welcomeAnimate
+{
+  from {
+    opacity: 0;
+    transform: translateY(0.5em);
+  }
+}
+
 header h1
 {
   padding-top: 0.25em;
@@ -40,6 +49,7 @@ header h1
   font-weight: 100;
 
   font-family: 'Roboto Slab', serif;
+  animation: 0.75s 0.5s welcomeAnimate backwards ease-out;
 }
 
 header img.backdrop
@@ -319,6 +329,7 @@ article h1
     color: #FFF;
     top: 0;
     right: 0;
+    animation: 0.25s 0.25s welcomeAnimate backwards ease-out;
   }
 
   .profile
