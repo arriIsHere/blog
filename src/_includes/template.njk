@@ -1,48 +1,48 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-		<!-- 
-			 Copyright 2016 Benjamin Blais
-			 Licensed under the Apache License, Version 2.0 (the "License");
-			 you may not use this file except in compliance with the License. 
-		-->
-	<meta name="viewport" content="initial-scale=1.0, width=device-width">
-	<meta property="og:title" content="{{title}}">
-	<meta property="og:description" content="Ben Blais Dev Blog">
-	<meta property="og:image" content="https://blog.benblais.com{{page.url}}{{image}}">
+	<head>
+		<meta charset="UTF-8">
+			<!-- 
+				Copyright 2016 Benjamin Blais
+				Licensed under the Apache License, Version 2.0 (the "License");
+				you may not use this file except in compliance with the License. 
+			-->
+		<meta name="viewport" content="initial-scale=1.0, width=device-width">
+		<meta property="og:title" content="{{title}}">
+		<meta property="og:description" content="Ben Blais Dev Blog">
+		<meta property="og:image" content="https://blog.benblais.com{{page.url}}{{image}}">
 
-	<meta name="twitter:card" content="summary_large_image">
-	
-	<title>{{title}} - The Personal Blog Of Ben Blais</title>
-	<link href="https://fonts.googleapis.com/css?family=Cormorant+Infant:300i" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Cormorant:400i" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="/lib/css/main.css">
-	<link rel="stylesheet" type="text/css" href="/lib/css/syntaxHighlight.css">
-</head>
-<body>
-<header>
-	<div class="widthFix">
-	<h1>{{title}}</h1>
-	</div>
-	<a href="/index.html" class="profile">
-		<img src="/lib/images/profile_pic.jpg">
-		<div class="inlineBox">
-			<span class="profileName">Ben Blais</span>
-			<span class="profileTitle">Web Developer</span>
+		<meta name="twitter:card" content="summary_large_image">
+		
+		<title>{{title}} - The Personal Blog Of Ben Blais</title>
+		<link href="https://fonts.googleapis.com/css?family=Cormorant+Infant:300i" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Cormorant:400i" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="/lib/css/main.css">
+		<link rel="stylesheet" type="text/css" href="/lib/css/syntaxHighlight.css">
+	</head>
+	<body>
+	<header>
+		<div class="widthFix">
+			<h1>{{title}}</h1>
 		</div>
-	</a>
-</header>
-<img class="backdrop" src="{{image}}">
-<div class="generatedBody">
-{{content|safe}}
-</div>
-<footer class="footer">
-<p>&copy; {{ globals.now | date("YYYY")}} Benjamin Blais</p>
-<p>Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a> (the "License");</p>
-<p>you may not use this file except in compliance with the License. </p>
-</footer>
-</body>
+		<a href="/index.html" class="profile">
+			<img src="/lib/images/profile_pic.jpg">
+			<div class="inlineBox">
+				<span class="profileName">Ben Blais</span>
+				<span class="profileTitle">Web Developer</span>
+			</div>
+		</a>
+	</header>
+	<img class="backdrop" src="{{image}}">
+	<div class="generatedBody">
+		{{content|safe}}
+	</div>
+	<footer class="footer">
+		<p>&copy; {{ globals.now | date("YYYY")}} Benjamin Blais</p>
+		<p>Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a> (the "License");</p>
+		<p>you may not use this file except in compliance with the License. </p>
+	</footer>
+	</body>
 </html>
