@@ -24,17 +24,6 @@ htmlTemplatize.registerCommand('title', (context) => {
 
 });
 
-htmlTemplatize.registerCommand('abstract', (context) => {
-
-  //Get the containing folder
-  const abstractFolder = path.dirname(context.partialPath);
-  const abstractPath = abstractFolder + "/abstract.txt";
-
-  //Return the file contents
-  return fs.readFileSync(abstractPath, {encoding: 'UTF-8'});
-
-});
-
 fs.mkdirParentSync = function(dirPath, mode)
 {
   //Try to find parent dir
