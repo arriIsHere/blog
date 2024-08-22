@@ -92,21 +92,23 @@ article h1
 
 .profile
 {
+  float: right;
   display: inline-block;
   padding-left: 2em;
-  padding-top: 1em;
+  padding-top: 1.5em;
   padding-right: 4em;
-  padding-bottom: 1em;
+  padding-bottom: 1.5em;
+  margin-top: 2em;
   width: auto;
   color: #FFF;
   font-family: 'Cormorant Garamond', serif;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+  background: rgba(0,0,0, 0.5);
 }
 
 .profile img
 {
   display: inline-block;
-  width: 5em;
+  width: 9em;
   vertical-align: middle;
 }
 
@@ -115,7 +117,7 @@ article h1
   clear: left;
   display: block;
   padding-top: 0.5em;
-  font-size: 1.25em;
+  font-size: 2.25em;
   padding-left: 0.25em;
 }
 
@@ -157,6 +159,8 @@ article h1
     bottom: 0;
     left: 0;
     background: none;
+    padding-left: 1em;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
   }
 
   .profile div.inlineBox
@@ -168,6 +172,24 @@ article h1
 /*Mobile only not really small screens*/
 @media screen and (min-device-width: 900px)
 {
+
+  .profile
+  {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    float: none;
+  }
+
+  .profile img
+  {
+    width: 5em;
+  }
+
+  .profile span
+  {
+    font-size: 1.5em;
+  }
+
   @supports( (perspective: 1px) and (not (-webkit-overflow-scrolling: touch)))
   {
     body
