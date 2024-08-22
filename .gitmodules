@@ -1,0 +1,3 @@
+[submodule "node/Templateizer"]
+	path = node/Templateizer
+	url = https://github.com/bblais23/Templateizer.git
