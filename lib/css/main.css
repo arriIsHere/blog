@@ -114,6 +114,7 @@ article h1
   color: #FFF;
   font-family: 'Roboto Slab', serif;
   background: rgba(0,0,0, 0.5);
+  text-decoration: none;
 }
 
 .profile img
