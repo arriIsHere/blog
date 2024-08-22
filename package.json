@@ -1,0 +1,30 @@
+{
+  "name": "blog",
+  "version": "2.0.0",
+  "description": "Personal blog for random articles",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve --port=3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bblais23/blog.git"
+  },
+  "keywords": [
+    "blog",
+    "coding",
+    "developer",
+    "personal",
+    "hobbies"
+  ],
+  "author": "Ben Blais",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/bblais23/blog/issues"
+  },
+  "homepage": "https://github.com/bblais23/blog#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.7.1",
+    "moment": "^2.24.0"
+  }
+}
