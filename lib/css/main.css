@@ -33,13 +33,12 @@ article
 header h1
 {
   padding-top: 0.25em;
-  font-size: 5em;
+  font-size: 3em;
   color: #FFF;
   margin-bottom: 0;
   text-shadow: 1px 1px 10px #000;
   font-weight: 100;
 
-  /*font-family: 'Cormorant Garamond', serif;*/
   font-family: 'Roboto Slab', serif;
 }
 
@@ -47,12 +46,10 @@ header img.backdrop
 {
   z-index: -1;
   position: absolute;
-  top: 0;
+  top: -150%;
   left: 0;
-  width: auto;
-  height: auto;
+  height: 120%;
   min-width: 100%;
-  min-height: 100%;
 }
 
 .abstract
@@ -74,7 +71,9 @@ article
   font-family: 'Cormorant Garamond', serif;
 }
 
-article p
+article p,
+article ul,
+article ol
 {
   font-size: 2em;
 }
@@ -212,6 +211,16 @@ article h1
   {
     height: 90vh;
   }
+  header h1
+  {
+    font-size: 5em;
+  }
+
+  header img.backdrop
+  {
+    top: 0;
+  }
+
   .abstract
   {
     clear: both;
