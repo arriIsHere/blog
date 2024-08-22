@@ -212,6 +212,11 @@ article h1
   margin-bottom: -15vw;
 }
 
+.articlePreview .previewImage
+{
+  height: 100%;
+}
+
 /*Stuff for desktop only*/
 @media screen and (min-device-width: 900px)
 {
