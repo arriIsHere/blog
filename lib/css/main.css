@@ -204,6 +204,10 @@ article h1
 
 @media screen and (min-width: 1024px)
 {
+  header img.backdrop
+  {
+    top: 0;
+  }
   .floatBoxContainer
   {
     padding-left: 2em;
@@ -248,6 +252,10 @@ article h1
 /*Stuff for desktop only*/
 @media screen and (min-device-width: 900px)
 {
+  header img.backdrop
+  {
+    top: -150%;
+  }
   .articlePreview
   {
     display: inline-block;
