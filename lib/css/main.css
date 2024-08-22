@@ -158,13 +158,14 @@ article h1
 .floatBoxContainer
 {
   padding-bottom: 5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .articlePreview
 {
   border-radius: 2em;
-  margin-left: auto;
-  margin-right: auto;
   width: 90vw;
   height: 70vw;
   display: block;
@@ -228,11 +229,15 @@ article h1
   }
   .articlePreview
   {
-    display: inline-block;
     width: 48em;
     height: 30em;
     font-size: 0.5em;
     padding-left: 2%;
+  }
+
+  .floatBoxContainer
+  {
+    justify-content: flex-start;
   }
 
   .articlePreview .previewTitle
@@ -287,7 +292,7 @@ article h1
       height: 100vh;
       scroll-behavior: smooth;
     }
-    
+
     header .profile
     {
       transform: translateZ(0);
@@ -302,7 +307,7 @@ article h1
     {
       transform: translateZ(0);
     }
-    
+
     .floatBoxContainer
     {
       transform: translateZ(0);
