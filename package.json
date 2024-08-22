@@ -3,7 +3,8 @@
   "version": "2.0.0",
   "description": "Personal blog for random articles",
   "scripts": {
-    "build": "eleventy --input=src --output=dist --passthroughall"
+    "build": "eleventy --input=src --output=dist --passthroughall",
+    "serve": "eleventy --input=src --output=dist --passthroughall --serve --port=3000"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/bblais23/blog#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^0.7.1"
+    "@11ty/eleventy": "^0.7.1",
+    "moment": "^2.24.0"
   }
 }
