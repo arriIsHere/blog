@@ -17,6 +17,11 @@ header
   overflow: hidden;
 }
 
+.generatedBody
+{
+  background-color: #FFF;
+}
+
 .widthFix,
 article
 {
@@ -28,6 +33,7 @@ article
 
   padding-left: 3em;
   padding-right: 2em;
+  padding-top: 2em;
 }
 
 /*Animate the header background*/
@@ -52,7 +58,7 @@ header h1
   animation: 0.75s 0.5s welcomeAnimate backwards ease-out;
 }
 
-header img.backdrop
+header + img.backdrop
 {
   z-index: -1;
   position: absolute;
@@ -161,6 +167,7 @@ article h1
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  background-color: #FFF;
 }
 
 .articlePreview
@@ -221,7 +228,7 @@ article h1
 /*Stuff for desktop only*/
 @media screen and (min-device-width: 900px)
 {
-  header img.backdrop
+  header + img.backdrop
   {
     top: -150%;
     min-height: 100%;
@@ -318,7 +325,7 @@ article h1
       transform: translateZ(0);
     }
 
-    header img.backdrop
+    header + img.backdrop
     {
       transform: translateZ(-2px) scale(3);
     }
@@ -327,7 +334,7 @@ article h1
 
 @media screen and (min-width: 1024px)
 {
-  header img.backdrop
+  header + img.backdrop
   {
     top: 0;
   }
