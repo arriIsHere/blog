@@ -37,9 +37,10 @@ header h1
   color: #FFF;
   margin-bottom: 0;
   text-shadow: 1px 1px 10px #000;
-  font-weight: lighter;
+  font-weight: 100;
 
-  font-family: 'Cormorant Garamond', serif;
+  /*font-family: 'Cormorant Garamond', serif;*/
+  font-family: 'Roboto Slab', serif;
 }
 
 header img.backdrop
@@ -112,7 +113,7 @@ article h1
   margin-top: 2em;
   width: auto;
   color: #FFF;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Roboto Slab', serif;
   background: rgba(0,0,0, 0.5);
 }
 
@@ -144,28 +145,69 @@ article h1
   display: inline-block;
 }
 
-.articlePreview
+.floatBoxContainer
 {
-  width: 30em;
-  display: inline-block;
-  overflow: hidden;
-  height: 20em;
-  margin: 1em;
+  padding-bottom: 5em;
 }
 
-.articlePreview a
+.articlePreview
 {
+  border-radius: 2em;
   margin-left: auto;
   margin-right: auto;
-  color: #000;
-  text-decoration: none;
+  width: 90vw;
+  height: 70vw;
   display: block;
+  overflow: hidden;
+  padding: 4em 1em 0em 1em;
+  text-decoration: none;
+  color: #000;
+  opacity: 0.99;
+  font-family: 'Roboto Slab', serif;
+}
+
+.articlePreview .previewTitle
+{
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+  color: #FFF;
+  text-decoration: none;
+  display: inline-block;
   text-align: center;
-  font-size: 2.5em;
+  font-size: 3em;
+  height: 15vw;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  margin-bottom: 0;
+}
+
+.articlePreview .previewTitle .date
+{
+  font-size: 0.75em;
+}
+
+.articlePreview .previewTitle .date:before
+{
+  display: block;
+  content: "";
+}
+
+.articlePreview .imageCrop
+{
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+  margin-bottom: -15vw;
 }
 
 @media screen and (min-width: 1024px)
 {
+  .floatBoxContainer
+  {
+    padding-left: 2em;
+  }
   header
   {
     height: 90vh;
@@ -198,10 +240,44 @@ article h1
   }
 }
 
-/*Mobile only not really small screens*/
+/*Stuff for desktop only*/
 @media screen and (min-device-width: 900px)
 {
+  .articlePreview
+  {
+    display: inline-block;
+    width: 48em;
+    height: 30em;
+    font-size: 0.5em;
+    padding-left: 2%;
+  }
 
+  .articlePreview .previewTitle
+  {
+    border-radius: inherit;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+
+    transition: opacity 0.5s ease-in;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .articlePreview:hover .previewTitle
+  {
+    opacity: 1;
+  }
+
+  .articlePreview .imageCrop
+  {
+    margin-bottom: -30em;
+    z-index: -1;
+    position: relative;
+  }
   .profile
   {
     padding-top: 1em;
