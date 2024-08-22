@@ -78,9 +78,20 @@ article p
   font-size: 2em;
 }
 
-article h1
+article h3
+{
+  font-size: 2em;
+  font-weight: bold;
+}
+
+article h2
 {
   font-size: 3em;
+}
+
+article h1
+{
+  font-size: 5em;
 }
 
 .floatBox

@@ -24,6 +24,43 @@ htmlTemplatize.registerCommand('title', (context) => {
 
 });
 
+htmlTemplatize.registerCommand('postList', (context, args) => {
+
+  let result = "";
+  console.log(`Template path: ${context.templatePath}`);
+  console.log(`Its index is: ${context.allPartials.indexOf(context.templatePath)}`);
+
+  console.log(`Before array is ${JSON.stringify(context.allPartials)}`);
+  //Clone the array and remove this partial
+  let postList = context.allPartials.slice(0);
+  postList.splice(postList.indexOf(context.templatePath), 1);
+
+  console.log(`After array is ${JSON.stringify(postList)}`);
+
+  //Sort the new array
+  postList.sort();
+
+  let meOutPath = path.dirname(context.templatePath);
+
+  //Now generate a string for elements
+  for(let item of postList)
+  {
+    console.log(`Item is ${item}`);
+    //Generate the output path
+    let outputPath = item;
+    outputPath = path.relative(meOutPath, outputPath);
+    outputPath = path.dirname(outputPath) + "/index.html";
+    outputPath = outputPath.replace(/\\/g, "/");
+
+    //Get the output image path
+    let outputImage = path.dirname(outputPath) + "/header.jpg";
+
+    result += `<div class="articlePreview"><a href="${outputPath}">Title of article</a><img src="${outputImage}"></div>`
+  }
+
+  return result;
+});
+
 fs.mkdirParentSync = function(dirPath, mode)
 {
   //Try to find parent dir
@@ -33,8 +70,10 @@ fs.mkdirParentSync = function(dirPath, mode)
   }
   catch(error)
   {
-    if(error.errno && error.errno === 'ENOENT')
+    console.log("entered catch");
+    if(error.code && error.code === 'ENOENT')
     {
+      console.log(`calling folder ${path.dirname(dirPath)}`);
       //Attempt to make parent folder(s)
       fs.mkdirParentSync(path.dirname(dirPath), mode);
       fs.mkdirParentSync(dirPath, mode);
@@ -121,4 +160,4 @@ for(let index = 0; index < partialList.length; ++index)
 
 ((template, partials, output, ctx) => {
   htmlTemplatize.templatize(template, partials, output, ctx);
-})(templateArg, partialList, outList, {outputBase : outputDirArg, partialBase : partialPath});
+})(templateArg, partialList, outList, {outputBase : outputDirArg, partialBase : partialPath, allPartials : partialList});
