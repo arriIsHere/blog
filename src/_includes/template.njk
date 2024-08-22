@@ -19,8 +19,8 @@
   <div class="widthFix">
   <h1>{{title}}</h1>
   </div>
-  <a href="{{generateBase}}/index.html" class="profile">
-    <img src="{{generateBase}}lib/images/profile_pic.jpg">
+  <a href="/index.html" class="profile">
+    <img src="/lib/images/profile_pic.jpg">
     <div class="inlineBox">
       <span class="profileName">Ben Blais</span>
       <span class="profileTitle">Web Developer</span>
@@ -29,7 +29,7 @@
 </header>
 <img class="backdrop" src="header.jpg">
 <div class="generatedBody">
-{{body}}
+{{content|safe}}
 </div>
 </body>
 </html>

@@ -1,0 +1,16 @@
+---
+title: The Personal Blog of Ben Blais
+---
+<div class="floatBoxContainer">
+  {%- for post in collections.post -%}
+  <a class="articlePreview" href="{{post.url}}">
+    <div class="imageCrop">
+      <img class="previewImage" src="{{post.data.image}}">
+    </div>
+    <span class="previewTitle">
+      <span>{{post.data.title}}</span>
+      <span class="date">{{post.data.date}}</span>
+    </span>
+  </a>
+  {%- endfor -%}
+</div>
