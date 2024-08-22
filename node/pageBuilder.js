@@ -32,6 +32,12 @@ htmlTemplatize.registerCommand('title', titleGenerator);
 
 htmlTemplatize.registerCommand('postList', (context, args) => {
 
+  if(args.length < 1)
+  {
+    console.error(`Cannot generate post list for ${context.templatePath}, no post template was provided`);
+    return "";
+  }
+
   let result = "";
 
   //Clone the array and remove this partial
@@ -44,10 +50,26 @@ htmlTemplatize.registerCommand('postList', (context, args) => {
 
   let meOutPath = path.dirname(context.templatePath);
 
+  //Get the template for the post list
+  let postListItemTemplatePath = path.normalize(args[0]);
+
+  //If this is not a full path then append the path to the template path
+  if(!/^([A-Za-z]:)?[\\\/]/.test(postListItemTemplatePath))
+  {
+    postListItemTemplatePath = meOutPath + "/" + postListItemTemplatePath;
+  }
+
+  //Read the template in so we can parse it for each item on the list
+  const postListItemTemplate = fs.readFileSync(postListItemTemplatePath, {encoding: "UTF-8"});
+
+  //Copy the context so that we can swap out the template and generate a text output.
+  const itemContext = htmlTemplatize.util.copyContext(context);
+
   //Now generate a string for elements
   for(let item of postList)
   {
     console.log(`Item is ${item}`);
+
     //Generate the output path
     let outputPath = item;
     outputPath = path.relative(meOutPath, outputPath);
@@ -57,7 +79,16 @@ htmlTemplatize.registerCommand('postList', (context, args) => {
     //Get the output image path
     let outputImage = path.dirname(outputPath) + "/header.jpg";
 
-    result += `<div class="articlePreview"><a href="${outputPath}">${titleGenerator(context)}</a><img src="${outputImage}"></div>\n`
+    let outputTitle = titleGenerator({partialPath : item});
+
+    //Set the values for the context
+    itemContext.outputPath = outputPath;
+    itemContext.outputImage = outputImage;
+    itemContext.title = outputTitle;
+
+    let itemResult = htmlTemplatize.templatizeString(postListItemTemplate, itemContext);
+
+    result += itemResult + "\n";
   }
 
   return result;
