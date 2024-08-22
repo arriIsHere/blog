@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <base href="{{generateBase}}">
   <meta charset="UTF-8">
     <!-- 
        Copyright 2016 Benjamin Blais
        Licensed under the Apache License, Version 2.0 (the "License");
        you may not use this file except in compliance with the License. 
     -->
-  <title>Test blog page!</title>
-  <link rel="stylesheet" type="text/css" href="lib/css/main.css">
+  <title>{{title}}</title>
+  <link rel="stylesheet" type="text/css" href="{{generateBase}}/lib/css/main.css">
   <link href="https://fonts.googleapis.com/css?family=Cormorant+Infant:300i" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Cormorant:400i" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
@@ -18,7 +17,7 @@
 <header>
   <div class="widthFix">
   <!-- TODO: REMOVE THIS WHEN DONE TESTING -->
-  <h1>I'm A Title Of An Article</h1>
+  <h1>{{title}}</h1>
   </div>
   <div class="floatBox">
     <div class="profile floatLeft">
