@@ -13,8 +13,11 @@ var fs = require('fs');
 var path = require('path');
 var htmlTemplatize = require('./Templateizer/htmlTemplatize');
 
-//Add function for title
-htmlTemplatize.registerCommand('title', (context) => {
+//Define constants used for configuration
+const outputHtmlName = "index.html";
+const headerImageName = "header.jpg";
+
+const titleGenerator = (context) => {
 
   const titleFileName = path.basename(context.partialPath, '.html');
 
@@ -22,20 +25,19 @@ htmlTemplatize.registerCommand('title', (context) => {
 
   return title;
 
-});
+};
+
+//Add function for title
+htmlTemplatize.registerCommand('title', titleGenerator);
 
 htmlTemplatize.registerCommand('postList', (context, args) => {
 
   let result = "";
-  console.log(`Template path: ${context.templatePath}`);
-  console.log(`Its index is: ${context.allPartials.indexOf(context.templatePath)}`);
 
-  console.log(`Before array is ${JSON.stringify(context.allPartials)}`);
   //Clone the array and remove this partial
   let postList = context.allPartials.slice(0);
   postList.splice(postList.indexOf(context.templatePath), 1);
 
-  console.log(`After array is ${JSON.stringify(postList)}`);
 
   //Sort the new array
   postList.sort();
@@ -49,13 +51,13 @@ htmlTemplatize.registerCommand('postList', (context, args) => {
     //Generate the output path
     let outputPath = item;
     outputPath = path.relative(meOutPath, outputPath);
-    outputPath = path.dirname(outputPath) + "/index.html";
+    outputPath = path.dirname(outputPath) + "/" + outputHtmlName;
     outputPath = outputPath.replace(/\\/g, "/");
 
     //Get the output image path
     let outputImage = path.dirname(outputPath) + "/header.jpg";
 
-    result += `<div class="articlePreview"><a href="${outputPath}">Title of article</a><img src="${outputImage}"></div>`
+    result += `<div class="articlePreview"><a href="${outputPath}">${titleGenerator(context)}</a><img src="${outputImage}"></div>\n`
   }
 
   return result;
@@ -140,9 +142,9 @@ for(let index = 0; index < partialList.length; ++index)
 {
   let outputValue = path.normalize(partialList[index].replace(partialPath, outputDirArg));
 
-  //The blog needs to have all the entries renamed to 'index.html'
+  //The blog needs to have all the entries renamed to the proper output name
   let dirName = path.dirname(outputValue);
-  let correctedOutputValue = dirName + "/index.html";
+  let correctedOutputValue = dirName + "/" + outputHtmlName;
 
   outList[index] = correctedOutputValue;
   try
@@ -156,7 +158,17 @@ for(let index = 0; index < partialList.length; ++index)
       throw error;
     }
   }
+
+  let imageFromPath = path.dirname(partialList[index]) + "/" + headerImageName;
+  let imageToPath = dirName + "/" + headerImageName;
+
+  if(fs.statSync(imageToPath).isFile() && fs.statSync(imageToPath).isFile())
+  {
+    //Copy header.jpg to the destination directory
+    fs.createReadStream(imageFromPath).on('error', _ => null).pipe(fs.createWriteStream(imageToPath).on('error', _ => null));
+  }
 }
+
 
 ((template, partials, output, ctx) => {
   htmlTemplatize.templatize(template, partials, output, ctx);
